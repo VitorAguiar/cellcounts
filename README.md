@@ -7,3 +7,7 @@ Tidy and plot cell count data
                        "readxl", "tibble", "tidyr", "zoo"))
 
     devtools::install_github("cttobin/ggthemr")
+
+#### Directory structure
+
+Save the \*.xlsx data in cellcounts/data/

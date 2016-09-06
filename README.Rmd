@@ -19,3 +19,7 @@ install.packages(c("devtools", "dplyr", "ggplot2", "magrittr", "readr",
 
 devtools::install_github("cttobin/ggthemr")
 ```
+
+#### Directory structure
+
+Save the *.xlsx data in cellcounts/data/
