@@ -1,0 +1,21 @@
+---
+title: "README"
+output: 
+    md_document:
+    variant: github_markdown
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Tidy and plot cell count data
+
+#### Install required packages
+
+```{r eval = FALSE}
+install.packages(c("devtools", "dplyr", "ggplot2", "magrittr", "readr", 
+                   "readxl", "tibble", "tidyr", "zoo"))
+
+devtools::install_github("cttobin/ggthemr")
+```
