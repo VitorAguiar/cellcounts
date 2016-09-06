@@ -5,7 +5,7 @@ cell_counts <-
 
 col_names <-
   zoo::na.locf(ifelse(names(cell_counts) == "", NA, names(cell_counts))) %>%
-  paste(cell_counts[1,-1]) %>%
+  stringr::str_c(cell_counts[1, -1]) %>%
   c("treatment", .)
 
 treatment_levels <- c("NI", "PRO", "AMA", "LPS", "LPS PRO", "LPS AMA")
@@ -13,7 +13,7 @@ treatment_levels <- c("NI", "PRO", "AMA", "LPS", "LPS PRO", "LPS AMA")
 cell_counts_tidy <-
   cell_counts %>%
   .[-1, ] %>%
-  setNames(col_names) %>%
+  purrr::set_names(col_names) %>%
   dplyr::select(-dplyr::matches("%MORTAS|TOTAL")) %>% 
   tidyr::fill(treatment) %>%
   tibble::rownames_to_column("observation") %>%
