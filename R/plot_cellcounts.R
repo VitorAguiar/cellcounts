@@ -4,7 +4,7 @@ library(ggthemr)
 cell_counts_tidy <- readr::read_csv("../data/cell_counts_tidy.csv")
 
 # plot theme and color scheme:
-ggthemr("fresh")
+ggthemr("light")
 
 # mean; 95% confidence limits calculated through bootstrap:
 ggplot(cell_counts_tidy, 
