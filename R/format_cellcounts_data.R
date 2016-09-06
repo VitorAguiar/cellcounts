@@ -21,11 +21,9 @@ cell_counts_tidy <-
   tidyr::separate(time, c("hours", "status"), sep = " ") %>%
   tidyr::spread(status, value) %>%
   dplyr::rename(live = VIVAS, dead = MORTAS) %>%
-  dplyr::mutate(observation = as.integer(observation),
-                treatment = factor(treatment, levels = treatment_levels),
-                hours = factor(hours), 
-                dead = as.integer(dead),
-                live = as.integer(live),
+  dplyr::mutate_at(dplyr::vars(observation, dead, live), as.integer) %>%
+  dplyr::mutate(treatment = factor(treatment, levels = treatment_levels),
+                hours = as.factor(hours), 
                 total = dead + live,
                 ratio = dead/total) %>%
   dplyr::arrange(observation, treatment, hours)
