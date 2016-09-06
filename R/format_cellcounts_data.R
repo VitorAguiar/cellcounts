@@ -5,7 +5,7 @@ cell_counts <-
 
 col_names <-
   zoo::na.locf(ifelse(names(cell_counts) == "", NA, names(cell_counts))) %>%
-  stringr::str_c(cell_counts[1, -1]) %>%
+  stringr::str_c(cell_counts[1, -1], sep = " ") %>%
   c("treatment", .)
 
 treatment_levels <- c("NI", "PRO", "AMA", "LPS", "LPS PRO", "LPS AMA")
